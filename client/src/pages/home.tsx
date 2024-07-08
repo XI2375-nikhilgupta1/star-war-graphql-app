@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     if(loading) {
         return <div>Loading...</div>
     };
-    console.log(error)
+    
     if(error) {
         return <div>{error.message}</div>
     }
