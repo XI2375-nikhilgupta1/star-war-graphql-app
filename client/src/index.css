@@ -24,6 +24,33 @@ code {
   background-size: 100% 100%;
 }
 
+.character-container {
+  height: min(650px, calc(90vh));
+  padding: 15px;
+}
+
+
+.character-container__description {
+  height: min(620px, calc(90vh));
+  overflow: scroll;
+}
+
 .react-autocomplete {
   width: min(500px, calc(100vw - 30px));
+}
+
+.carousel-btn {
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  top: 40%;
+}
+
+.left-icon {
+  left: 5px;
+}
+
+.right-icon {
+  right: 5px;
 }

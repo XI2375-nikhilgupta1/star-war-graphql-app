@@ -15,6 +15,7 @@ query getCharacter($characterId: ID!) {
         name
         birth_year
         height
+        url
         films {
             title
             episode_id

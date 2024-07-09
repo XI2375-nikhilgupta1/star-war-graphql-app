@@ -4,10 +4,10 @@ export interface CharacterHome {
         height: string;
         url: string;
 }
-export interface Character extends CharacterHome{
-        films: [Film];
-        starships: [Starship];
-        vehicles: [Vehicle];
+export interface Character extends CharacterHome {
+        films: Film[];
+        starships: Starship[];
+        vehicles: Vehicle[];
         planet: Planet;
 }
 
