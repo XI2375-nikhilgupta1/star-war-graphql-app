@@ -1,15 +1,25 @@
-export interface Character {
-        id: number; // I assume ID is defined elsewhere
+export interface CharacterHome {
         name: string;
         birth_year: string;
-        height: number;
+        height: string;
         url: string;
+}
+export interface Character extends CharacterHome{
+        films: [Film];
+        starships: [Starship];
+        vehicles: [Vehicle];
+        planet: Planet;
 }
 
 export interface Error {
         message: string
 }
 
+export interface Planet {
+        climate: string;
+        name: string;
+        terrain: string;
+}
 export interface Transport {
         cost_in_credits: string;
         model: string

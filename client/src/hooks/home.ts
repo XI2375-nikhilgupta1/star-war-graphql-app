@@ -1,33 +1,31 @@
 import { useEffect, useState } from 'react';
 import { Character, Error } from '../interfaces';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import {useNavigate} from 'react-router-dom';
+import { _sessionStorage as ss} from '../helpers/util';
+import { GET_CHARACTERS } from '../queries';
 
 
 const useHome = () => {
     const navigate = useNavigate();
-    const [charactersList,  setCharacterList] = useState<Character[]>([]);
-    const GET_CHARACTERS = gql`
-        query getCharacters {
-            charactersForHome {
-                name
-                birth_year
-                height
-                url
-        }
-    }`;
+    
+    // Populating home data for sessionStorage if present (client side caching)
+    const existingHomePageCharacters:Character[] = ss.getWithExpiry('charactersForHome') || [];
 
-    const { loading, error, data}:{loading: boolean, error?: Error, data: any} = useQuery<Character[]>(GET_CHARACTERS);
-
+    const [charactersList,  setCharacterList] = useState<Character[]>(existingHomePageCharacters);
+    const { loading, error, data} : {loading: boolean, error?: Error, data: any} = useQuery<Character[]>(GET_CHARACTERS, {skip: !!charactersList.length});
+    
     useEffect(()=>{
-        data?.charactersForHome && setCharacterList(data.charactersForHome);
+        if(data?.charactersForHome){
+            setCharacterList(data.charactersForHome);
+            ss.setWithExpiry('charactersForHome', data.charactersForHome)
+        }
     },[data]);
 
     const handleOnSelect = (item:Character) => {
         const characterId = item.url.split('/people/')[1];
         navigate(`/character/${item.name.replace(/ /g,'-').toLocaleLowerCase()}/${characterId}`)
     }
-    
     
       return {
         charactersList,
