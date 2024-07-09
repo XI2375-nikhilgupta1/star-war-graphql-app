@@ -1,32 +1,31 @@
 import React from "react"
-import {gql, useQuery} from '@apollo/client';
-import CharacterCard from "../components/CharacterCard";
 import { Character } from "../interfaces";
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import useHome from "../hooks/home";
 
-const CHARACTERS = gql`
-    query getCharacters {
-        charactersForHome {
-            name
-            birth_year
-            height
-            url
-    }
-}`;
+
 
 const Home: React.FC = () => {
-    const { loading, error, data} = useQuery(CHARACTERS);
+    const { charactersList, loading, error, handleOnSelect} = useHome();
 
-    if(loading) {
-        return <div>Loading...</div>
-    };
+
     
     if(error) {
         return <div>{error.message}</div>
     }
-    return <div className="grid grid-cols-4 gap-4 ">
+
+    return <div className="flex h-screen justify-center items-center home-page-container">
         {
-            data.charactersForHome?.map((character: Character)=>(<CharacterCard {...character}/>))
+            loading ? (<div className="text-white">Loading...</div>) :
+            <ReactSearchAutocomplete   
+                className="react-autocomplete"
+                items={charactersList}
+                onSelect={handleOnSelect}
+                autoFocus
+                formatResult={(item:Character)=>item.name}
+            />
         }
+        
     </div>
 };
 

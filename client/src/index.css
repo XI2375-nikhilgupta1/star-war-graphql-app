@@ -15,3 +15,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.home-page-container {
+  background: url('https://wallpapers.com/images/featured/star-wars-plzcoaffexgf4h81.jpg');  
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-size: 100% 100%;
+}
+
+.react-autocomplete {
+  width: min(500px, calc(100vw - 30px));
+}

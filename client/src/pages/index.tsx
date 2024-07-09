@@ -9,7 +9,7 @@ const Pages: React.FC = () => {
         <BrowserRouter>
             <Routes>
                 <Route element={<Home />} path="/" />
-                <Route element={<CharacterPage />} path="/character/:characterId" />
+                <Route element={<CharacterPage />} path="/character/:name/:characterId" />
             </Routes>
         </BrowserRouter>
     );
