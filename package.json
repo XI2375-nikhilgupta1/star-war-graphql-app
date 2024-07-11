@@ -1,0 +1,20 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "The App contains client and server folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd client && npm start && cd ../server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XI2375-nikhilgupta1/star-war-graphql-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XI2375-nikhilgupta1/star-war-graphql-app/issues"
+  },
+  "homepage": "https://github.com/XI2375-nikhilgupta1/star-war-graphql-app#readme"
+}

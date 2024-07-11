@@ -16,11 +16,10 @@ code {
     monospace;
 }
 
-
 .home-page-container {
-  background: url('https://wallpapers.com/images/featured/star-wars-plzcoaffexgf4h81.jpg');  
+  background: url('https://wallpapers.com/images/featured/star-wars-plzcoaffexgf4h81.jpg');
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   background-size: 100% 100%;
 }
 
@@ -28,7 +27,6 @@ code {
   height: min(650px, calc(90vh));
   padding: 15px;
 }
-
 
 .character-container__description {
   height: min(620px, calc(90vh));
