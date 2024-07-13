@@ -31,7 +31,7 @@ const useCharacter = () => {
   }, [characterId]);
 
   const { loading, error, data } = useQuery(GET_CHARACTER, {
-    skip: !!characterData?.name,
+    skip: ss.getWithExpiry(`character-${characterId}`) !== null,
     variables: { characterId },
   });
 

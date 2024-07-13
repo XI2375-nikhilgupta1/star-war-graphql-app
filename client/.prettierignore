@@ -1,0 +1,7 @@
+build
+node_modules
+.github
+tailwind.config.js
+setupTests.ts
+reportWebVitals.ts
+react-app-env.d.ts
