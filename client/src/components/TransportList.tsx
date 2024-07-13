@@ -2,7 +2,7 @@ import React from 'react';
 import { type Starship, type Transport, type Vehicle } from '../interfaces';
 
 const TransPortList = ({
-  transportList,
+  transportList
 }: {
   transportList: Vehicle[] | Starship[];
 }) => (

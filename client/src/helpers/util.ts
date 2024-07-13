@@ -2,7 +2,7 @@ export const _sessionStorage = {
   getWithExpiry(key: string): object | null {
     try {
       const obj: { expiryTime: number; value: object } = JSON.parse(
-        sessionStorage.getItem(key) ?? '',
+        sessionStorage.getItem(key) ?? ''
       );
       if (obj.expiryTime > new Date().getTime()) {
         return obj.value;
@@ -17,5 +17,5 @@ export const _sessionStorage = {
   setWithExpiry(key: string, value: object, ttl: number = 3600): void {
     const objToStore = { value, expiryTime: new Date().getTime() + ttl * 1000 };
     sessionStorage.setItem(key, JSON.stringify(objToStore));
-  },
+  }
 };

@@ -17,7 +17,7 @@ const useCharacter = () => {
     films: [],
     starships: [],
     vehicles: [],
-    planet: { name: '', climate: '', terrain: '' },
+    planet: { name: '', climate: '', terrain: '' }
   };
   const [characterData, setCharacterData] =
     useState<Character>(defaultCharacter);
@@ -32,7 +32,7 @@ const useCharacter = () => {
 
   const { loading, error, data } = useQuery(GET_CHARACTER, {
     skip: ss.getWithExpiry(`character-${characterId}`) !== null,
-    variables: { characterId },
+    variables: { characterId }
   });
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const useCharacter = () => {
         .toLowerCase();
       if (characterName !== actualCharacterName) {
         navigate(`/character/${actualCharacterName}/${characterId}`, {
-          replace: true,
+          replace: true
         });
       }
     }
@@ -66,7 +66,7 @@ const useCharacter = () => {
   };
 
   const handleRightArrow: (
-    event: React.MouseEvent<HTMLElement>,
+    event: React.MouseEvent<HTMLElement>
   ) => void = e => {
     const characterId = e.currentTarget.dataset.characterid || '1';
     navigate(`/character/random/${Number(characterId) + 1}`);
@@ -78,7 +78,7 @@ const useCharacter = () => {
     showLoader,
     error,
     characterData,
-    characterImage,
+    characterImage
   };
 };
 

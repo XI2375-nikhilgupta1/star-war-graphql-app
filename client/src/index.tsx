@@ -7,7 +7,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache()
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
@@ -17,7 +17,7 @@ root.render(
     <ApolloProvider client={client}>
       <Pages />
     </ApolloProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

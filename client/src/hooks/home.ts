@@ -13,10 +13,10 @@ const useHome = () => {
     ss.getWithExpiry('charactersForHome') ?? [];
 
   const [charactersList, setCharacterList] = useState<Character[]>(
-    existingHomePageCharacters as Character[],
+    existingHomePageCharacters as Character[]
   );
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
-    skip: !(charactersList.length === 0),
+    skip: !(charactersList.length === 0)
   });
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const useHome = () => {
   const handleOnSelect = (item: Character) => {
     const characterId = item.url.split('/people/')[1];
     navigate(
-      `/character/${item.name.replace(/ /g, '-').toLocaleLowerCase()}/${characterId}`,
+      `/character/${item.name.replace(/ /g, '-').toLocaleLowerCase()}/${characterId}`
     );
   };
 
@@ -38,7 +38,7 @@ const useHome = () => {
     loading,
     error,
     data,
-    handleOnSelect,
+    handleOnSelect
   };
 };
 

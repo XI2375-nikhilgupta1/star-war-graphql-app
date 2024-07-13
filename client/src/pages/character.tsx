@@ -16,7 +16,7 @@ const CharacterPage: React.FC = () => {
     showLoader,
     error,
     characterData,
-    characterImage,
+    characterImage
   } = useCharacter();
 
   if (error != null) {
