@@ -8,7 +8,8 @@
     "dev": "nodemon src/index.js",
     "client": "cd client && npm start",
     "dev:all": "concurrently \"npm run dev\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm install && npm run build && cd ../"
   },
   "author": "",
   "license": "ISC",
