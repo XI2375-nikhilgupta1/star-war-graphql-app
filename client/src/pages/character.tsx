@@ -42,7 +42,10 @@ const CharacterPage: React.FC = () => {
       <div className="character-container sm:w-full md:w-3/5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 flex sm:flex-wrap md:flex-nowrap  gap-8 relative">
         {!hideLeftButton && (
           <button
-            data-characterId={characterId}
+            role="button"
+            aria-label="left"
+            name="left"
+            data-characterid={characterId}
             onClick={handleLeftArrow}
             className="absolute left-icon carousel-btn shadow"
           >
@@ -50,7 +53,10 @@ const CharacterPage: React.FC = () => {
           </button>
         )}
         <button
-          data-characterId={characterId}
+          role="button"
+          aria-label="right"
+          name="right"
+          data-characterid={characterId}
           onClick={handleRightArrow}
           className="absolute right-icon carousel-btn shadow"
         >

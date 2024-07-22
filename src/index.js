@@ -5,6 +5,7 @@ import express from 'express';
 import CharacterAPI from './dataSources/character-api.js';
 import path from 'path';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ dotenv.config();
     // Initialize an Express application
     const app = express();
     const __dirname = path.resolve(path.dirname(''));
+    app.use(cors())
     // Apply the Apollo GraphQL middleware to the Express server
     server.start().then(() => {
         server.applyMiddleware({ app, path: '/api'  });
