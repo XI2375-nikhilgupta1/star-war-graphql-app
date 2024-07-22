@@ -21,11 +21,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --output public",
+    "build": "react-scripts build",
     "lint-front": "lint-staged",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "cd .. && husky install .husky",
+    "prepare": "cd .. && husky install client/.husky",
     "precommit": "lint-staged",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
