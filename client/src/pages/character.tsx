@@ -25,7 +25,7 @@ const CharacterPage: React.FC = () => {
 
   if (showLoader) {
     return (
-      <div className="flex justify-center items-center h-screen character-page">
+      <div className="flex justify-center items-center h-screen character-page loader-container">
         <div className="md:w-3/5 sm:w-full character-container justify-center items-center p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 flex gap-8 relative">
           <Loader />
         </div>
@@ -62,15 +62,15 @@ const CharacterPage: React.FC = () => {
         >
           &#8594;
         </button>
-        <div className="w-2/5 text-white text-md capitalize">
+        <div className="w-2/5 text-black text-md capitalize character-container__image">
           <img className="rounded" alt={name} src={characterImage} />
-          <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">
+          <h3 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-black mt-2">
             {name}
           </h3>
-          <p>
+          <p className="text-sm">
             Birth Year: {birth_year} | Height: {height}
           </p>
-          <p>Climate: {planet.climate}</p>
+          <p className="text-sm">Climate: {planet.climate}</p>
           <p className="text-sm">Planet Name: {planet.name}</p>
           <p className="text-sm">Terrain: {planet.terrain}</p>
         </div>
