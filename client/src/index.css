@@ -18,20 +18,20 @@ code {
 
 
 .home-page-container {
-  background: url('https://wallpapers.com/images/featured/star-wars-plzcoaffexgf4h81.jpg');  
+  background: url('../public/star-war-background.jpg');  
   background-repeat: no-repeat;
   background-size: cover; 
   background-size: 100% 100%;
 }
 
 .character-container {
-  /* height: min(700px, calc(90vh)); */
+  height: min(700px, calc(90vh));
   padding: 15px;
 }
 
 
 .character-container__description {
-  /* height: min(670px, calc(90vh)); */
+  height: min(670px, calc(90vh));
   overflow: scroll;
 }
 
@@ -83,6 +83,7 @@ code {
   .loader-container .character-container {
     box-shadow: none;
     border: none;
+    height: 400px;
   }
 
 }
